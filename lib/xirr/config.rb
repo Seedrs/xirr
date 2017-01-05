@@ -9,9 +9,9 @@ module Xirr
       precision:       6,
       default_method:  :newton_method,
       fallback:        true,
-      replace_for_nil: 0.0,
+      replace_for_nil: nil,
       compact: true,
-      raise_exception: false
+      raise_exception: true
   }
 
   # Iterates though default values and sets in config
