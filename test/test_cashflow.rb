@@ -136,7 +136,7 @@ describe 'Cashflows' do
     end
 
     it 'returns 0 instead of exception ' do
-      assert_equal BigDecimal.new(0, 6), @cf.xirr
+      assert_raises(ArgumentError) { @cf.xirr raise_exception: true }
     end
 
 
@@ -304,8 +304,7 @@ describe 'Cashflows' do
 
     it 'has zero for years of investment' do
       cf = Cashflow.new flow: [Transaction.new(105187.06, date: '2011-12-07'.to_date), Transaction.new(-105187.06 * 1.0697668105671994, date: '2011-12-07'.to_date)]
-      assert_equal 0.0, cf.irr_guess
-      assert_equal Xirr::REPLACE_FOR_NIL, cf.xirr #(method: :newton_method)
+      assert_raises(ArgumentError) { cf.xirr raise_exception: true }
     end
 
     it 'respects a different period' do
