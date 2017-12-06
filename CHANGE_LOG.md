@@ -1,3 +1,6 @@
+## Version 0.5.5
+* Update to Rails 5.0
+
 ## Version 0.5.4
 * Fallsback If Newton Methods returns NaN 
 
