@@ -20,7 +20,7 @@ module Xirr
       # define default values
       values.each do |key, value|
         define_method key do
-          BigDecimal.new(value, Xirr::PRECISION)
+          BigDecimal(value, Xirr::PRECISION)
         end
       end
 
@@ -36,7 +36,7 @@ module Xirr
       # @param x [BigDecimal]
       def values(x)
         value = @transactions.send(@function, BigDecimal.new(x[0].to_s, Xirr::PRECISION))
-        [BigDecimal.new(value.to_s, Xirr::PRECISION)]
+        [BigDecimal(value.to_s, Xirr::PRECISION)]
       end
     end
 
